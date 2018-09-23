@@ -7,7 +7,7 @@ MKDIR_BUILD_TEST = mkdir -p build/test
 
 .PHONY: clean test default
 
-default: bin/game
+default: bin/game.exe
 
 bin/game: build/src/main.o
 	mkdir -p bin
