@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#include "game.h"
+
 void welcome_message()
 {
     printf("Hello. This is game \"Bulls and Cows\".\n");
@@ -12,4 +14,5 @@ void welcome_message()
 int main()
 {
     welcome_message();
+    game();
 }
