@@ -9,11 +9,19 @@ MKDIR_BUILD_TEST = mkdir -p build/test
 
 default: bin/game.exe
 
-bin/game: build/src/main.o
+bin/game.exe: build/src/main.o build/src/game.o build/src/random_fill.o
 	mkdir -p bin
 	$(CC) $(CFLAGS) $^ -o $@
 
 build/src/main.o: src/main.c
+	$(MKDIR_BUILD_SRC)
+	$(OBJ)
+
+build/src/game.o: src/game.c src/game.h
+	$(MKDIR_BUILD_SRC)
+	$(OBJ)
+
+build/src/random_fill.o: src/random_fill.c src/random_fill.h
 	$(MKDIR_BUILD_SRC)
 	$(OBJ)
 
