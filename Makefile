@@ -3,7 +3,6 @@ CFLAGS = -Wall -Werror -std=c11
 
 OBJ = $(CC) -c $< -o $@ $(CFLAGS)
 MKDIR_BUILD_SRC = mkdir -p build/src
-MKDIR_BUILD_TEST = mkdir -p build/test
 
 .PHONY: clean test default
 
@@ -13,6 +12,17 @@ bin/game.exe: build/src/main.o build/src/game.o build/src/random_fill.o\
 		build/src/get_input.o
 	mkdir -p bin
 	$(CC) $(CFLAGS) $^ -o $@
+
+test: bin/test
+	$<
+
+bin/test: build/test/main.o
+	mkdir -p bin
+	$(CC) $(CFLAGS) $^ -o $@
+
+build/test/main.o: test/main.c
+	mkdir -p build/test
+	$(OBJ) -I thirdparty -I src
 
 build/src/main.o: src/main.c
 	$(MKDIR_BUILD_SRC)
