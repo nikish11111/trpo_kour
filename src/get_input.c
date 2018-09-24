@@ -27,7 +27,17 @@ int check_repeats(char char_array[])
     return 0;
 }
 
-void get_input(int get_input[])
+int string_to_int(char arr[])
+{
+    int result = 0;
+    for (int i = 0; i < 4; i++) {
+        result *= 10;
+        result += arr[i];
+    }
+    return result;
+}
+
+int get_input(int user_input[])
 {
     char char_array[5];
     while(1) {
@@ -36,7 +46,7 @@ void get_input(int get_input[])
         if (check_input(char_array) || check_repeats(char_array)) {
             printf("wrong input, please try again\n\n");
         } else {
-            break;
+            return string_to_int(char_array);
         }
     }
 }
