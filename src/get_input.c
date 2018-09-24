@@ -33,6 +33,10 @@ void get_input(int get_input[])
     while(1) {
         printf("input number\n");
         scanf("%s", char_array);
-        break;
+        if (check_input(char_array) || check_repeats(char_array)) {
+            printf("wrong input, please try again\n\n");
+        } else {
+            break;
+        }
     }
 }
