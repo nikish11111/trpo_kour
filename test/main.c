@@ -2,6 +2,7 @@
 #include <ctest.h>
 
 #include <get_input.h>
+#include <random_fill.h>
 
 CTEST(check_input, correct1)
 {
@@ -32,6 +33,21 @@ CTEST(check_input, incorrect2)
     char input[] = {1, 2, 3, 4, '\n'};
     int result = check_input(input);
     int expected = 1;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(random_fill, correct)
+{
+    int arr[4];
+    random_fill(arr);
+    int result = 0;
+    for (int i = 0; i < 4; i++) {
+        if (arr[i] < 0 || arr[i] > 9) {
+            result = 1;
+            break;
+        }
+    }
+    int expected = 0;
     ASSERT_EQUAL(expected, result);
 }
 

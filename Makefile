@@ -16,7 +16,7 @@ bin/game.exe: build/src/main.o build/src/game.o build/src/random_fill.o\
 test: bin/test.exe
 	$<
 
-bin/test.exe: build/test/main.o build/src/get_input.o
+bin/test.exe: build/test/main.o build/src/get_input.o build/src/random_fill.o
 	mkdir -p bin
 	$(CC) $(CFLAGS) $^ -o $@
 
