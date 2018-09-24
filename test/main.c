@@ -51,6 +51,38 @@ CTEST(random_fill, correct)
     ASSERT_EQUAL(expected, result);
 }
 
+CTEST(check_repeats, no_repeats1)
+{
+    char input[] = {'1', '2', '3', '4'};
+    int result = check_repeats(input);
+    int expected = 0;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(check_repeats, no_repeats2)
+{
+    char input[] = {'1', '9', '8', '0'};
+    int result = check_repeats(input);
+    int expected = 0;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(check_repeats, one_repeat)
+{
+    char input[] = {'1', '9', '3', '1'};
+    int result = check_repeats(input);
+    int expected = 1;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(check_repeats, full_repeat)
+{
+    char input[] = {'5', '5', '5', '5'};
+    int result = check_repeats(input);
+    int expected = 1;
+    ASSERT_EQUAL(expected, result);
+}
+
 int main(int argc, const char **argv)
 {
     return ctest_main(argc, argv);
