@@ -4,8 +4,9 @@
 void game()
 {
     int N = 4;
-    int b[N], c[N];
+    int b[N];
     while(1) {
-        random_fill(b, c);
+        random_fill(b, N);
+        break;
     }
 }
