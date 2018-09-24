@@ -83,6 +83,16 @@ CTEST(check_repeats, full_repeat)
     ASSERT_EQUAL(expected, result);
 }
 
+CTEST(string_to_int, correct)
+{
+    char str[] = {'1', '2', '3', '4'};
+    int arr[4];
+    string_to_int(str, arr);
+    int result = arr[0] == 1 && arr[1] == 2 && arr[2] == 3 && arr[3] == 4;
+    int expected = 1;
+    ASSERT_EQUAL(expected, result);
+}
+
 int main(int argc, const char **argv)
 {
     return ctest_main(argc, argv);
