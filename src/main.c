@@ -14,5 +14,13 @@ void welcome_message()
 int main()
 {
     welcome_message();
-    game();
+    while (1) {
+        game();
+        printf("Try again? (0 = no, any key = yes)\n");
+        char input[2];
+        scanf("%s", input);
+        if (input[0] == '0') {
+            break;
+        }
+    }
 }

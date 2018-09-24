@@ -9,7 +9,6 @@ void game()
     int generated[4], user_input[4];
     random_fill(generated);
     while (1) {
-        printf("input number\n");
         get_input(user_input);
         int bools_n = bulls(generated, user_input);
         int cows_n = cows(generated, user_input);
