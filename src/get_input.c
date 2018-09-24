@@ -37,7 +37,7 @@ void string_to_int(char arr[], int num_array[])
 void get_input(int user_input[])
 {
     char char_array[5];
-    while(1) {
+    while (1) {
         printf("input number\n");
         scanf("%s", char_array);
         if (check_input(char_array) || check_repeats(char_array)) {

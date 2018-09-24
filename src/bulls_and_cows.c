@@ -15,8 +15,8 @@ int cows(int generated[], int user_input[])
 {
     int cows = 0;
     for (int i = 0; i < 4; i++) {
-        for(int j = 0;j < 4; j++) {
-            if(generated[i] == user_input[j] && i != j)
+        for (int j = 0;j < 4; j++) {
+            if (generated[i] == user_input[j] && i != j)
                 cows++;
         }
     }
