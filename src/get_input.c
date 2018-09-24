@@ -8,7 +8,7 @@ int check_input(char char_array[])
         return 1;
     }
     for (int i = 0; i < 4; i++) {
-        if (char_array[i] < 0 || char_array[i] > 9) {
+        if (char_array[i] < '0' || char_array[i] > '9') {
             return 1;
         }
     }
