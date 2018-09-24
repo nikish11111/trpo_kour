@@ -1,7 +1,7 @@
 #include "game.h"
 #include "random_fill.h"
 #include "get_input.h"
-//#include "bulls_and_cows.h"
+#include "bulls_and_cows.h"
 
 void game()
 {
@@ -9,8 +9,8 @@ void game()
     while(1) {
         random_fill(generated);
         get_input(user_input);
-        //int bools = bulls(generated, user_input);
-        //int cows = cows(generated, user_input);
+        int bools_n = bulls(generated, user_input);
+        int cows_n = cows(generated, user_input);
         break;
     }
 }
