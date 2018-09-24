@@ -4,7 +4,7 @@ int bulls(int generated[], int user_input[])
 {
     int bulls = 0;
     for (int i = 0; i < 4; i++) {
-        if generated[i] == user_input[i] {
+        if (generated[i] == user_input[i]) {
             bulls++;
         }
     }
@@ -16,7 +16,7 @@ int cows(int generated[], int user_input[])
     int cows = 0;
     for (int i = 0; i < 4; i++) {
         for(int j = 0;j < 4; j++) {
-            if(A[i] == B[j] && i != j)
+            if(generated[i] == user_input[j] && i != j)
                 cows++;
         }
     }

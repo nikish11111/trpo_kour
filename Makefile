@@ -9,7 +9,7 @@ MKDIR_BUILD_SRC = mkdir -p build/src
 default: bin/game.exe
 
 bin/game.exe: build/src/main.o build/src/game.o build/src/random_fill.o\
-		build/src/get_input.o bulls_and_cows.o
+		build/src/get_input.o build/src/bulls_and_cows.o
 	mkdir -p bin
 	$(CC) $(CFLAGS) $^ -o $@
 
