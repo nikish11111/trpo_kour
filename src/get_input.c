@@ -15,6 +15,18 @@ int check_input(char char_array[])
     return 0;
 }
 
+int check_repeats(char char_array[])
+{
+    for (int i = 0; i < 3; i++) {
+        for (int j = i + 1; j < 4; j++) {
+            if (char_array[i] == char_array[j]) {
+                return 1;
+            }
+        }
+    }
+    return 0;
+}
+
 void get_input(int get_input[])
 {
     char char_array[5];
